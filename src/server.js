@@ -51,7 +51,7 @@ app.post("/keyword", (req, res) => {
     if (!fs.existsSync("uploads/" + keyword + ".txt")) {
       console.log("hello");
       const pythonProcess = spawn("python", [
-        "E:/Class/Mini-Project/sentiment-analysis-android/src/py/Sentiment.py",
+        path.join(__dirname, "../py/Sentiment.py"),
         keyword
       ]);
       pythonProcess.stdout.on("data", async data => {
